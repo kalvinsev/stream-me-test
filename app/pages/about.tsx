@@ -10,7 +10,7 @@ export default function About() {
                     Next.js example
                 </Typography>
                 <Link href='/'>
-                    <Button variant='contained' color='primary'>
+                    <Button variant='contained' color='primary'>    
                         Go to the index page
                     </Button>
                 </Link>
