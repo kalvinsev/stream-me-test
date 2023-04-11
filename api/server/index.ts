@@ -15,7 +15,12 @@ async function createServer() {
     // 2. create express server
     const app = express();
 
-    app.use(cors());
+    app.use(
+      cors({
+        origin: ['http://localhost:3000/', 'http://localhost:4000/graphql'],
+        credentials: true,
+      })
+    );
 
     // allow JSON requests
     app.use(express.json());
