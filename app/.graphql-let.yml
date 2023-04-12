@@ -3,6 +3,4 @@ documents: "**/*.graphql"
 plugins:
   - typescript-operations
   - typescript-react-apollo
-cacheDir:
-  - .cache
-  - __generated__
+cacheDir: __generated__
