@@ -5,8 +5,10 @@ import express from 'express';
 import cors from 'cors';
 import createSchema from '../schema';
 import createSession from '../session';
+import nextApp from '@stream-me/app';
 
 const port = process.env.PORT || 4000;
+const handle = nextApp.getRequestHandler();
 
 async function createServer() {
   try {
@@ -14,13 +16,18 @@ async function createServer() {
     await createSession();
     // 2. create express server
     const app = express();
+    const corsOptions = {
+      credentials: true,
+    };
+    app.use(cors(corsOptions));
 
-    app.use(
-      cors({
-        origin: ['http://localhost:3000/', 'http://localhost:4000/graphql'],
-        credentials: true,
-      })
-    );
+
+    // app.use(
+    //   cors({
+    //     origin: ['http://localhost:3000/', 'http://localhost:4000/graphql'],
+    //     credentials: true,
+    //   })
+    // );
 
     // allow JSON requests
     app.use(express.json());
@@ -35,7 +42,12 @@ async function createServer() {
     });
 
     await apolloServer.start();
-    apolloServer.applyMiddleware({ app });
+    apolloServer.applyMiddleware({ app, cors: corsOptions });
+
+    // create next app request handler
+    // prepare the next app
+    await nextApp.prepare();
+    app.get('*', (req, res) => handle(req, res));
 
     // start the server
     app.listen({ port }, () => {

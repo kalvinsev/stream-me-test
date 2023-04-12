@@ -10,7 +10,7 @@ export class User {
   @Field()
   @Property({ required: true })
   email: string;
-
+  
   @Property({ required: true }) // --> properties we want to have write access to, we declare @Property which allows us to write those properties to the user
   password: string;
 }

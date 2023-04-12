@@ -34,7 +34,6 @@ export class AuthResolver {
       payload,
       process.env.SESSION_SECRET || 'aslkdfjoiq12312'
     );
-
     return { user, token };
   }
 

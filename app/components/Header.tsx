@@ -22,24 +22,22 @@ export default function Header({ darkState, handleThemeChange }) {
     user && { label: 'Create', href: '/streams/new' },
     user && { label: 'Sign Out', href: '/auth/signout' },
   ]
-    .filter((link) => link)
-    .map(({ label, href }) => {
-      return (
-        <Link href={href} key={href}>
-          <Button color="inherit">{label}</Button>
-        </Link>
-      );
-    });
+  .filter((link) => link)
+  .map(({ label, href }) => {
+    return (
+      <Link href={href} key={href}>
+        <Button color="inherit">{label}</Button>
+      </Link>
+    );
+  });
 
     return (
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-            <Link href="/streams">
-                <LinkText href="" color="inherit">
-                  Stream.share
-                </LinkText>
+              <Link href="/streams">
+                Stream.share
               </Link>
             </Typography>
             <Switch checked={darkState} onChange={handleThemeChange} />

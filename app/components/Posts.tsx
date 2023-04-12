@@ -47,7 +47,7 @@ interface Props {
                   <Hidden xsDown>
                     <CardMedia
                       className={styles.cardMedia}
-                      image="https://source.unsplash.com/random"
+                      image="https://source.unsplash.com/featured"
                       title="Image title"
                     />
                   </Hidden>
