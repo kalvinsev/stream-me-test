@@ -2,7 +2,7 @@
   "name": "@stream-me/app",
   "version": "18.14.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "private": true,
   "scripts": {
     "dev": "next dev",
