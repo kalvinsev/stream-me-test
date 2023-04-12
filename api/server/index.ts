@@ -6,6 +6,7 @@ import cors from 'cors';
 import createSchema from '../schema';
 import createSession from '../session';
 import nextApp from '@stream-me/app';
+import { GraphQLSchema } from 'graphql';
 
 const port = process.env.PORT || 4000;
 const handle = nextApp.getRequestHandler();
@@ -16,6 +17,7 @@ async function createServer() {
     await createSession();
     // 2. create express server
     const app = express();
+    
     const corsOptions = {
       credentials: true,
     };
@@ -32,7 +34,7 @@ async function createServer() {
     // allow JSON requests
     app.use(express.json());
 
-    const schema = await createSchema();
+    const schema: GraphQLSchema = await createSchema();
 
     // 3. create GraphQL server
     const apolloServer = new ApolloServer({
