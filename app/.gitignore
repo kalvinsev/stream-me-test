@@ -2,7 +2,7 @@
 node_modules
 .DS_Store
 .next
-# *.graphql.d.ts
-# *.graphqls.d.ts
+*.graphql.d.ts
+*.graphqls.d.ts
 /.cache
 __generated__
