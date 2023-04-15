@@ -17,6 +17,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@graphql-codegen/cli": "2.16.4"
+    "@babel/types": "^7.21.4"
   }
 }
