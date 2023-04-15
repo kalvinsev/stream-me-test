@@ -18,5 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/types": "^7.21.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.35"
   }
 }
