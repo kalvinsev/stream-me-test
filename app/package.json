@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "npx graphql-let && next build",
-    "start": "next start"
+    "start": "next start",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@apollo/client": "^3.7.11",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@graphql-codegen/client-preset": "^3.0.0",
     "@mui/material": "^5.11.12",
     "@mui/styled-engine-sc": "^5.11.11",
     "@mui/styles": "^5.11.12",
@@ -37,7 +39,8 @@
     "type-graphql": "^0.17.6"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/cli": "3.3.0",
+    "@graphql-codegen/client-preset": "3.0.0",
     "@graphql-codegen/plugin-helpers": "^4.2.0",
     "@graphql-codegen/typescript": "^3.0.3",
     "@graphql-codegen/typescript-operations": "^3.0.3",

@@ -1,0 +1,9 @@
+overwrite: true
+schema: "lib/schema.graphqls"
+documents: "**/*.graphql"
+generates:
+  __generated__/lib/:
+    preset: "client"
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
