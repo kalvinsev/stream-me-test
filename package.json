@@ -15,5 +15,8 @@
   ],
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-codegen/cli": "2.16.4"
+  }
 }

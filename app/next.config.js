@@ -1,5 +1,10 @@
 module.exports = {
     webpack(config, options) {
+      config.modules.rules.push({
+        experimental: {
+          forceSwcTransforms: true,
+        },
+      });
       config.module.rules.push({
         test: /\.graphql$/,
         exclude: /node_modules/,
