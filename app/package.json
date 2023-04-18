@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx graphql-let && next build",
+    "build": "next build",
     "start": "next start"
   },
   "keywords": [],
